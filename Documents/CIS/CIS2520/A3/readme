@@ -1,0 +1,138 @@
+****************************************
+Syed Usman Zubair       0921526
+CIS 2520                Assignment 3
+Nov 6/16
+****************************************
+
+*************
+ Compilation
+*************
+
+The command used to compile the program using the existing makefile is:
+
+make
+
+*******
+ Usage
+*******
+
+The first program is run by entering:
+./q1.out "<expression>"
+Where <expression> is the expression to be evaluated. The expression must be fully bracketed, contain only doubles in the form A.BC 
+where A, B and C are digits, variables in the form xD, where D is a digit, and operators +/*-.
+A sample expression that can be used is (((2.12+x1)*x2)-x3) (note, quotation marks must be included).
+
+The user will give given a menu of options. After an option is selected, they will be
+prompted for any additional information that is required.
+The program can be exited by pressing 7 in the main menu.
+
+The second program is run by entering:
+./q2.out
+f.dat must exist and contain 20 rows, each containing 2 digit integers.
+
+*********
+ Output
+*********
+
+./q1.out "(((2.12+x1)*x2)-x3)"
+Select an option from below:
+1. Display
+2. Preorder
+3. Inorder
+4. Postorder
+5. Update
+6. Calculate
+7. Exit
+1
+                         (-) 
+                   (*)  (x3=0.00) 
+             (+)  (x2=0.00) 
+       (2.12)  (x1=0.00) 
+
+Select an option from below:
+<menu>
+2
+ -  *  +  2.12  x1  x2  x3 
+
+Select an option from below:
+<menu>
+3
+(((2.12+x1)*x2)-x3)
+
+Select an option from below:
+<menu>
+4
+ 2.12  x1  +  x2  *  x3  - 
+
+Select an option from below:
+<menu>
+5
+Enter a variable name followed by value
+x2 5.2013
+Updated succesfully
+
+Select an option from below:
+<menu>
+6
+The result is 11.03
+
+Select an option from below:
+<menu>
+7
+...............................................
+
+Here is the output for the second option:
+
+25 12 17 82 52 53  5  3 68 64 
+16 14 27 99 29 99 79 45 59 19 
+50  9  6 44 59 87 32 36 36 46 
+12  0 68 68 49 68 74 32  9 30 
+81 30 16 65 40 39 44 49 32 60 
+25 41 11 88 15 39 88 69 31 49 
+44 27 68 96 70 98 85 13 25 47 
+ 3 60 76 23 14 81 82  0 38  4 
+43 27 20 59  4 84 10 42 43  2 
+41 82 53 40 29 84 24 61 87 20 
+99 37 50 93 57  6 29 91 92 39 
+81 14 42 21  9 69  5 30 20 91 
+ 3 37 97 53 36 54 69 68 38 43 
+83 82 43 11 21  4  8 97 93 14 
+51 90 37 86 42 44 48 64 41  1 
+96 89 75  0 63 24 54 20 20 24 
+88 56 59 88 39 30 44 59 49 72 
+49 17 44 32 33 54 60 33 51 87 
+ 9 83 22 90 74 56 64 75 67 55 
+41 62 82 46 69 42 74 68 79 28 
+
+
+*******************
+ Known Limitations
+*******************
+
+The program will crash if an inappropriate type is entered when the user is asked for input (such as a
+string rather than int).
+
+The first program requires strict adherence to the expression guidelines outlined above. Any error, 
+especially in missing brackets, will most likely cause a segmentation fault. Numbers entered must have 2 decimal places,
+and variables must be named x1, x2, ... x9. These assumptions are made using the assignment guidlines.
+
+As with most caluclators, dividing by zero does not produce a defined result. That is the case for this calculator
+too.
+
+Also, if the same variable is used multiple times, the program is only able to find one instance of it when updating values.
+
+Finally, the tree in the first program may not always be displayed with proper alignment when option 1 is selected. This is
+due to the recursive nature of the algorithm.
+
+For the second program, it is assumed that the file "f.dat", if it exists contains 20 lines, each with 10 2 digit integers,
+as per assignment guidelines.
+
+************
+ References
+************
+
+"Linux Programmer's Manual" (also known as man pages).
+This was used to help in use of functions such as strlen.
+
+Fangju Wang
+Provided information about how downheap algorithms work.
